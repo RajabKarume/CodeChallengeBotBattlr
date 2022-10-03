@@ -1,25 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import BotCard from "./BotCard";
+// import BotSpecs from "./BotSpecs"
+// import YourBotArmy from "./YourBotArmy";
 
-function BotCollection() {
-  const [bots, setBots] = useState([])
+function BotCollection({bots, setBots, handleclick }) {
 
-  useEffect(()=>{
-    fetch ("http://localhost:8002/bots")
-    .then ((responce)=>responce.json())
-    .then ((data)=>setBots(data))
-
-  },[])
-  
-  return (
+    return (
     <div className="ui four column grid">
       <div className="row">
         {bots.map((bot)=>(
-          < BotCard 
-          bot ={bot} 
-          key = {bot.id}
-          />
+          <>
+            < BotCard 
+            bot ={bot} 
+            key = {bot.id}
+            handleclick={handleclick}
+            />
+          </>
         ))}
         Collection of all bots
       </div>
