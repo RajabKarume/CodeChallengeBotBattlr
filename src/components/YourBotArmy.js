@@ -4,6 +4,7 @@ import BotCard from "./BotCard";
 function YourBotArmy({ myBots, setMyBots }) {
   //your bot army code here...
   console.log(myBots)
+  
   return (
     <div className="ui segment inverted olive bot-army">
       <div className="ui five column grid">

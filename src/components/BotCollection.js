@@ -10,13 +10,12 @@ function BotCollection({bots, setBots, handleclick }) {
     <div className="ui four column grid">
       <div className="row">
         {bots.map((bot)=>(
-          <>
             < BotCard 
             bot ={bot} 
             key = {bot.id}
             handleclick={handleclick}
             />
-          </>
+        
         ))}
         Collection of all bots
       </div>

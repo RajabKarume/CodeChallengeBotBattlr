@@ -48,7 +48,7 @@ function BotCard({ bot, handleclick }) {
               <button
                 className="ui mini red button"
                 onClick={() =>
-                  console.log("add code to connect event listener")
+                  console.log("clicked")
                 }
               >
                 x
