@@ -30,7 +30,7 @@ function BotsPage() {
   console.log(myBots)
   return (
     <div>
-      <YourBotArmy myBots={myBots} setMyBots={setMyBots} key={bots.id} />
+      <YourBotArmy myBots={myBots} setMyBots={setMyBots} key={bots.id} handleclick={handleclick} />
       <BotCollection bots={bots} setBots={setBots} key={bots.id} handleclick={handleclick} />
     </div>
   )
