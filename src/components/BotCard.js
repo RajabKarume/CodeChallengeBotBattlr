@@ -9,7 +9,15 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot, handleclick }) {
+function BotCard({ bot, handleclick, deleteBot, id }) {
+
+  function handleDelete(id){
+    fetch (`http://localhost:8002/bots/${id}`,{
+      method: "DELETE",
+    })
+    .then((responce)=>responce.json())
+    .then(()=>deleteBot(bot))
+  }
   return (
     <div className="ui column">
       <div
@@ -48,7 +56,7 @@ function BotCard({ bot, handleclick }) {
               <button
                 className="ui mini red button"
                 onClick={() =>
-                  console.log("clicked")
+                  handleDelete(id)
                 }
               >
                 x

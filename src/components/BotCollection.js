@@ -5,7 +5,12 @@ import BotCard from "./BotCard";
 // import YourBotArmy from "./YourBotArmy";
 
 function BotCollection({bots, setBots, handleclick }) {
-
+    function deleteBot(deletedBot){
+      const updatedBot = bots.filter((bot)=>(
+        bot.id !== deletedBot.id
+      ))
+      setBots(updatedBot)
+    }
     return (
     <div className="ui four column grid">
       <div className="row">
@@ -14,6 +19,8 @@ function BotCollection({bots, setBots, handleclick }) {
             bot ={bot} 
             key = {bot.id}
             handleclick={handleclick}
+            deleteBot={deleteBot}
+            id={bot.id}
             />
         
         ))}
