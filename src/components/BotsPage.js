@@ -7,7 +7,7 @@ function BotsPage() {
   //start here with your code for step one
   const [bots, setBots] = useState([])
   const [myBots, setMyBots] = useState([])
-  const [isClicked, setIsClicked] = useState(false)
+  const [isClicked, setIsClicked] = useState(true)
 
   useEffect(()=>{
     fetch ("http://localhost:8002/bots")
@@ -24,7 +24,7 @@ function BotsPage() {
       const arr = myBots.filter((mybot) => mybot !== bot);
       setMyBots(arr)}
     
-    setIsClicked(!isClicked)
+    setIsClicked(isClicked)
   }
   
   console.log(myBots)
